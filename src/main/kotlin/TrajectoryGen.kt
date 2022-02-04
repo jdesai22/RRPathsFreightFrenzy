@@ -1,3 +1,10 @@
+import RedAuto.Left
+import RedAuto.LeftAround
+import RedAuto.Right
+
+import BlueAuto.Left as LeftBlue
+import BlueAuto.Right as RightBlue
+
 import com.acmerobotics.roadrunner.geometry.Pose2d
 import com.acmerobotics.roadrunner.geometry.Vector2d
 import com.acmerobotics.roadrunner.trajectory.Trajectory
@@ -17,20 +24,34 @@ object TrajectoryGen {
     private val startPose = Pose2d(-48.0, -48.0, 90.0.toRadians)
 
     fun createTrajectory(): ArrayList<Trajectory> {
-        val list = ArrayList<Trajectory>()
+//        val list = ArrayList<Trajectory>()
+//
+//        val builder1 = TrajectoryBuilder(startPose, startPose.heading, combinedConstraints)
+//
+//        builder1.forward(40.0);
+//
+//        // Small Example Routine
+////        builder1
+////            .splineTo(Vector2d(10.0, 10.0), 0.0)
+////            .splineTo(Vector2d(15.0, 15.0), 90.0);
+//
+//        list.add(builder1.build())
 
-        val builder1 = TrajectoryBuilder(startPose, startPose.heading, combinedConstraints)
+//        val Left = Left();
+//        return Left.createTrajectory();
 
-        builder1.forward(40.0);
 
-        // Small Example Routine
-//        builder1
-//            .splineTo(Vector2d(10.0, 10.0), 0.0)
-//            .splineTo(Vector2d(15.0, 15.0), 90.0);
+//        val Right = Right();
+//        return Right.createTrajectory();
 
-        list.add(builder1.build())
+        val LeftBlue = LeftBlue();
+        return LeftBlue.createTrajectory();
 
-        return list
+//        val RightBlue = RightBlue();
+//        return RightBlue.createTrajectory();
+
+//        val LeftAround = LeftAround();
+//        return LeftAround.createTrajectory();
     }
 
     fun drawOffbounds() {
